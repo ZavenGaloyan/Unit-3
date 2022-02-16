@@ -1,5 +1,5 @@
 # Code
-'''py
+```py
 class Vehicle:
     '''Class for vehicle and parent class for electric vehicle.'''
     #attributes
@@ -86,7 +86,7 @@ for i in range(100):
     '''Charge all the battery to 50 and show the charge of each battery in the stock'''
     Stock_bats[i].charge_bat(50)
     print(Stock_bats[i])
- '''
+ ```
  
  
  # Outcome
