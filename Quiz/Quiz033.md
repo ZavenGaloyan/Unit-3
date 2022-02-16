@@ -1,5 +1,5 @@
 # Code
-'''
+'''py
 class Vehicle:
     '''Class for vehicle and parent class for electric vehicle.'''
     #attributes
