@@ -42,4 +42,9 @@ select count() from  crime_scene_report where crime_scene_report.description lik
 <img width="1440" alt="count4" src="https://user-images.githubusercontent.com/82266864/156921668-a58f373e-5745-4c2c-8020-67382e74b830.png">
 
 
+## UML
+<img width="1440" alt="uml crimescene" src="https://user-images.githubusercontent.com/82266864/156923650-5735702a-2711-44fe-af34-c2aef369b0f7.png">
+
+
+
 
