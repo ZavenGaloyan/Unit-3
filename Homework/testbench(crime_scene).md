@@ -1,5 +1,5 @@
 # Code 
-```py
+```sql
 --query the database to know what is inside
 select * from person limit 1;
 
@@ -19,8 +19,7 @@ select  count(annual_income) from income where annual_income =35000;
 
 ```
 # HW: code to find number of crime related to nudism/nudist
-```py
-
+```sq;
 --how many murder cases related to nudism
 select * from  facebook_event_checkin where event_name like '%nudi%';
 select count() from  facebook_event_checkin where event_name like '%nudi%';
