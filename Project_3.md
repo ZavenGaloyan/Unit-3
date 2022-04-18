@@ -5,15 +5,22 @@ My client is a grade 11 student, Anju Yasu who is studying the IB diploma progra
 
 ### Success Criteria
 
-1. The application has a register function to register a user’s email, username, and password and stored them in the database.
+1. The application has the registration screen which allow the user to input the username, email and password which will be save in the database for login.
 
-2. The application has a login function for users to log in to their diary with email and password which if the inputted information is correct the user will be able to access their diary and edit them.
+2. The password that user inputted need to be encrypted with cryptographic hash function to secure it in the database.
 
-3. Users can write the title, content and date added(in case the user wants to record the diary for other days and not that day) and click the save button to save the information in the database.
+3. The user can login with email and password used for register
 
-4. The application can automatically save the date and time last updated for each diary into the database.
+4. The user can create new diary which can input title, author and content and the application will automatically set the date added and date last updated of each diary and put them in the new table in the database.
 
-5. The user can input their name to be saved as the author of the diary or if the user doesn’t input anything, the application will automatically use the username as the author.
+5. The user can see their diary using list button to see the auto generated id, title, author, date added, date last updated and content of each diary owned by them.
+
+6. The user can use remove button to delete the diary in the checked row and use open/edit button to edit the content which will also update table and database and it will automatically change date last updated of that diary.
+
+7. If user didn't input author name, the application will automatically take ther username inputted during the registration as the author name of that diary.
+
+8. The application can show the average word count of the total content of every the diary at the below the diary table in the list screen.
+
 
 ### Rationale for the Proposed Solution
 In this project, I will use kivymd to create the application interface, SQLAlchemy to create and manage the database, and python 3.9 to create the function of the application. Firstly, I use kivymd to create the interface as kivymd is a simple framework that can allow the user to create the application interface like the login screen, home screen, and every interface needed in this project. Kivymd also provided their user with a detailed description, easy-to-follow example, and “how to use” for each command. In addition, Kivymd can also work with Python to create applications with good functionality. Secondly, SQLAlchemy is the main library that will be used in this project to create and organize the database that will collect the data inputted by users in the form of an online library. SQLAlchemy is being used in this project because it allows the client to easily see and understand all the information inputted in the table and allows them to sort the data as well. Moreover, SQLAlchemy allows me to use it along with normal python and kivymd and all of them can perfectly work together to create an application that can meet all the success criteria. Lastly, the main programming language that will be used in this project is Python because Python is a simple coding language that allows me to meet all the client’s requirements and it also allows me to create applications interface and manage the database by cooperating with Kivymd and SQLAlchemy mentioned before.
@@ -37,11 +44,13 @@ Need 1 flowchart
 
 ## ER Diagram
 
-<img width="945" alt="ER" src="https://user-images.githubusercontent.com/82266864/162608765-a0b36bc7-26cd-43ff-b878-5bf7d23ad543.png">
+<img width="1089" alt="er" src="https://user-images.githubusercontent.com/82266864/163766363-f4d0ff35-4a26-46d3-8123-52b293fe4b1e.png">
+
 
 ## UML Diagram
 
-1 Diagram
+<img width="533" alt="UML" src="https://user-images.githubusercontent.com/82266864/163766329-9d88ca77-8700-4f4e-8353-ea1d7c202e9e.png">
+
 
 ## Record of Task 
 Paste when complete
