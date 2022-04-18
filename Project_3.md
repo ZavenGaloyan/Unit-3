@@ -29,11 +29,12 @@ In this project, I will use kivymd to create the application interface, SQLAlche
 
 ## Flowchart
 
-Need 1 flowchart
+![Untitled Diagram drawio](https://user-images.githubusercontent.com/82266864/163771760-3bb20494-14a7-431f-8f51-aeab7e8f1fca.png)
+
 
 ## System Diagram
 
-![Untitled drawing](https://user-images.githubusercontent.com/82266864/162608536-7fdc7879-91ec-4d8e-be76-fb12a54cab90.jpg)
+![Untitled drawing (1)](https://user-images.githubusercontent.com/82266864/163768959-76e62696-9f45-4416-878b-1df96bee20e8.jpg)
 
 ## Wireframe Diagram
 
