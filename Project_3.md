@@ -31,34 +31,55 @@ In this project, I will use kivymd to create the application interface, SQLAlche
 
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/82266864/163771760-3bb20494-14a7-431f-8f51-aeab7e8f1fca.png)
 
+**Figure 1** This is the flow diagram that used to show the process of the average word count calculation part from defining the variable after start to returning message before the end.
+
 
 ## System Diagram
 
 ![Untitled drawing (1)](https://user-images.githubusercontent.com/82266864/163768959-76e62696-9f45-4416-878b-1df96bee20e8.jpg)
 
+**Figure 2** This shows the system diagram from the input(keyboard) to the output which includes different systems being used in this project such as version of coding language and application, computer version and detail, module and database and the output screen.
+
 ## Wireframe Diagram
 
 ![IMG_637E054BF57E-1](https://user-images.githubusercontent.com/82266864/162605632-614d364a-6117-4b82-8307-4943742db26b.jpeg)
 
+**Figure 3** This shows the original wireframe diagram presented to the client as an MVP
 
 ![IMG_5DE50A8C9968-1](https://user-images.githubusercontent.com/82266864/163747867-8c6ead17-654e-4621-bcad-1c7d5481acba.jpeg)
+
+**Figure 4** This is the finishing product that shows the final version of wireframe diagram
 
 ## ER Diagram
 
 <img width="1089" alt="er" src="https://user-images.githubusercontent.com/82266864/163766363-f4d0ff35-4a26-46d3-8123-52b293fe4b1e.png">
 
+**Figure 5** This is the ER diagram showing the relation between 2 tables in this project.
 
 ## UML Diagram
 
 <img width="533" alt="UML" src="https://user-images.githubusercontent.com/82266864/163766329-9d88ca77-8700-4f4e-8353-ea1d7c202e9e.png">
 
+**Figure 6** This shows the UML diagram for the TableScreen class which is inherited from the MDScreen class.
 
+
+
+## Test Plan
+| Description                 | Type             | Inputs                                                                                                                                              | Outputs                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|-----------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Registration system         | Unit test        | 1. Run the main_ORM.py 2. Click Register button on the application 3. Input information in each textfield following the hint text 4. Click register | If the user already exists: the message in red will say the user already exists. If 2 passwords don't match: the message will say that password doesn't match. If follow all instruction: successfully open WelcomeScreen.                                                                                                                                                                                                                          |
+| User database check         | Unit test        | 1. Register 2. Open user table in application database.py 3. Check password column and id column                                                    | All passwords need to be encrypted with hash and id has to be unique between 1 to 99,999.                                                                                                                                                                                                                                                                                                                                                           |
+| Log out system              | Unit test        | 1. Register 2. Press log out button                                                                                                                 | Login screen will appear.                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Login system                | Unit test        | 1. Input the registered email in email textfield 2. Input the password in the password textfield 3. Press login button                              | If the email is not registered: "User doesn't exists" will be displayed If the password is wrong: "Wrong password" will appeared If the email and passwords are correct: the WelcomeScreen will be opened                                                                                                                                                                                                                                           |
+| Diary openning and checking | Integration test | 1. Press "New" button 2. Fill in the title, author(optional), and content 3. Press the save button 4. Press "List" button                           | Note: If the author is not inputted: the author name will be the username The table will appear with 1 diary that belongs to specific user and6 columns including ID(unique), Title,  Date added(today date in year month, and day), Last updated(the date that the document is last updated),  Author and Content(of the diary). At the bottom of the screen, there will be an average word count of  per diary which will be in the whole number. |
+| Remove function             | Unit test        | 1. Press check on one of the diary in the TableScreen 2. Press delete                                                                               | That specific diary will be delete from the on screentable and database. The average will also be updated.                                                                                                                                                                                                                                                                                                                                          |
+| Edit function               | Unit test        | 1. Press on one of the box in front of a diary in the TableScreen 2. Press open/edit button 3. Change some contents  4. Press save change           | The new content will be updated to the table which also change the last_update column and average word count                                                                                                                                                                                                                                                                                                                                        |
+| Python Code Review          | Code Review      | Check the main_ORM.py and database_model.py file for: 1. Variable names 2. Comment 3. Repetition                                                    | The variable name and comment help the user to understand the functionality of the code The code should be easy to follow and not too complicated to understand with no repetition.                                                                                                                                                                                                                                                                 |
+
+**Table 1** Test plan for tester to follow to test the application.
 ## Record of Task 
 Paste when complete
 
-## Test Plan
-
-1 table -- 3 tests
 
 # Criteria C : Development
 
@@ -73,7 +94,7 @@ Paste when complete
 
 
 ### 1. Developing GUI for application
-KivyMD Library has been chosen to be used to create the application interface as it is one of the client's requirements. The app interface is created in the separate file (login.kv file) which is linked to the main file by import different functions(**figure 1**) from the library and using the class call app (name of .kv) and use the build function from imported MDApp to show the interface when run the file(**figure 2**) . 
+KivyMD Library has been chosen to be used to create the application interface as it is one of the client's requirements. The app interface is created in the separate file (login.kv file) which is linked to the main file by import different functions(**figure 7**) from the library and using the class call app (name of .kv) and use the build function from imported MDApp to show the interface when run the file(**figure 8**) . 
 
 
 ```py
@@ -98,7 +119,7 @@ from passlib.context import CryptContext
 #import cryptcontext to use sha256 to create hash of user's password
 ```
 
-**Figure 1**: Setting up random, datetime,KivyMD, SQLAlchemy and Pbkdf2 by importing necessary functions from each library.
+**Figure 7**: Setting up random, datetime,KivyMD, SQLAlchemy(ORM) and Pbkdf2 by importing necessary functions from each library.
 
 ```py
 class app(MDApp):
@@ -110,10 +131,10 @@ k = app()
 #define the variable which belong to class app to activate run method from MDApp class imported
 k.run()
 ```
-**Figure 2**: Create app class which has the same name as the kivy file to link 2 files together and to run and show the GUI a variable has to be created and degine as class app to use run method inherited from MDApp.
+**Figure 8**: Create app class which has the same name as the kivy file to link 2 files together and to run and show the GUI a variable has to be created and degine as class app to use run method inherited from MDApp.
 
 
-After that, different screens are created and defined in the ScreenManager in the kivy file. Then, different elements can be added to that screen below <Screenname> as shown in **figure 3**.
+After that, different screens are created and defined in the ScreenManager in the kivy file. Then, different elements can be added to that screen below <Screenname> as shown in **figure 9**.
 
 ```py
 ScreenManager:
@@ -235,10 +256,13 @@ ScreenManager:
                 text: ""
                 text_color:255/255, 59/255, 59/255
 
-```
-**Figure 3**: Showing the kivy file with screenmanager which define names and id of each screen in the project. Followed by the LoginScreen part which allow me to develop the login screen with different components.
+
   
-As you can see from **figure 3**, this is the organization of the LoginScreen with different components such as BoxLayout (for background and orientation), MDCard to add  other elements like MDLabels (text), MDTextFields(input information) and MDRaisedButton. RaiseButton is one of the most frequently used components as it can activate a functions defined in the python file using command "on_release" **figure 3** which in this case it can change the screen like the register button or activate function like login button. 
+
+```
+**Figure 9**: Showing the kivy file with screenmanager which define names and id of each screen in the project. Followed by the LoginScreen part which allow me to develop the login screen with different components.
+  
+As you can see from **figure 9**, this is the organization of the LoginScreen with different components such as BoxLayout (for background and orientation) and inside there is MDCard to add  other elements like MDLabels (text), MDTextFields(input information) and MDRaisedButton. RaiseButton is one of the most frequently used components as it can activate a functions defined in the python file using command "on_release" **figure 9** which in this case it can change the screen like the register button or activate function like login button. 
 
 ```py
  class LoginScreen(MDScreen):
@@ -276,65 +300,323 @@ As you can see from **figure 3**, this is the organization of the LoginScreen wi
                 self.ids.label.font_name = "default.ttf"
  
 ```
-**Figure 4**: the login class in python file that is connected to the login screen in the kivy file which allows functions to be created to be activated when button is released. There is 1 function in this class which is used for logging in which is try_login.
+**Figure 10**: the login class in python file that is connected to the login screen in the kivy file which allows functions to be created to be activated when button is released. There is 1 function in this class which is used for logging in which is try_login.
   
-  These screens are also being defined in the main python file using a class which will inherit attributes and some methods from the MDScreen class, imported earlier. After defining and inheriting the class, the screen will be linked to the python file ,so different functions can be created in each class and used with the raise button through on_release command in the kivy file (see **figure 4**). Screen can be switched using self.parent.current as shown in **figure 5 and 6**. Each element in the kivy file can be given an id like self.ids.label.text in **figure 4** to get information or make some changes to it. 
-
+These screens are also being defined in the main python file using a class which will inherit attributes and some methods from the MDScreen class, imported earlier. After defining and inheriting the class, the screen will be linked to the python file ,so different functions can be created in each class and used with the raise button through on_release command in the kivy file (see **figure 10**). Screen can be switched using self.parent.current as shown in **figure 11 and 12**. Each element in the kivy file can be given an id like self.ids.label.text = "Wrong password" in **figure 10** to get information from it like when used with text field or make some changes to information from the python file such as change text or text color when some functions are activated. For example, when password inputted is incorrect, the label text which has given the id will change its text to "Wrong password". Moreover, the id can also be given to the screen to get value from different screen using self.parent.ids.screenid.ids.id.element as shown in **figure 11**.
+	
 ```py
-  self.parent.current = "WelcomeScreen"
+def logout(self):
+	self.parent.ids.loginscr.ids.email.text = ""
 ```
-  **Figure 5**: Changing screen to welcome screen in python file
-  
-  ```kv
-  root.parent.current = "RegisterScreen"
-  ```
-  **Figure 6**: Changing screen to register screen in kivy file
-
-### 2. Database
-	Databases are being used to store user's information. To use relational databases, I will use sqlalchemy library. Starting with setting up the library,table and database by import sessionmaker, tables (which would be defined in the different python file) and different functions **figure below**. Starting with a separate python file which will be created to set up tables by importing different functions and create a variable for the declarative base function which is used to define classes mapped to relational data tables. 
-
-After that, class for the table as shown in  **fig above** can be created and define the name of the table, column name, information type and other details about the column. After that the function create engine can be used to create the database as shown in fig below. 
-
-After finishing working with seperate file, in the main file, create_engine function will be used to bind the file with the created database as shown in fig above.
-
-2.1 Registration(adding information into database)
+**Figure 11**: Showing the use of id by changing text_color of label in login screen from the welcome screen function logout.
+	
 	
 
-Example of adding information into the database is in the registration process which uses session.query with filter to query the database whether the inputted email and username have been used or not to prevent existing users from registering again. Then, the password has to be verified to check whether the confirmed password matches with the inputted password or not using the id from the kivy to get the value. After that, a random unique id will be generated for each user using the random.randint(a,b). After that, the information can be added in the database using session.add(new) which is the variable that is used to define the information that will be added in each column as shown in fig above. Then, it will add all the information into the user table after being committed. The same process also applies to adding the information to the diary table which uses datetime.today() (shown in fig below) to get the date for the date_added column.
+```py
+self.parent.current = "WelcomeScreen"
+```
+**Figure 12**: Changing screen to welcome screen in python file
+  
+```kv
+root.parent.current = "RegisterScreen"
+```
+**Figure 13**: Changing screen to register screen in kivy file
+
+### 2. Database
+Databases are being used to store user's information. To use relational databases, I will use sqlalchemy library through ORM. Starting with setting up the library,table and database by import sessionmaker, tables, base (which would be defined in the different python file) and different functions **figure 7**. Starting with a separate python file which will be created to set up tables by importing different functions and create a variable for the declarative base function which is used to define classes mapped to relational data tables as shown in **figure 14**. 
+
+```py
+from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy.orm import declarative_base
+#import base and elements in the table and define it
+Base = declarative_base()
+
+class user(Base):
+    #create table by making class of that table and name it
+    __tablename__ = "user"
+    #Give the detail to each column of table
+    id = Column(Integer, primary_key=True)
+    username = Column(String(250))
+    email = Column(String(250), nullable=False)
+    password = Column(String(256), nullable=False)
+	
+```
+**Figure 14**: The seperate python file called database_model.py to set up the detail each table that will be used. In the code above, the base has been defined after different functions have been imported. After that the class to create table was created with table name and each column name with detail such as information type and size.
+	
+After that, class for the table as shown in  **figure 14** can be created and define the name of the table, column name, information type and other details about the column. After that the function create engine can be used to create the database as shown in **figure 15**. 
+	
+```py
+	
+db_engine = create_engine("sqlite:///application_database.db")
+#create the database
+Base.metadata.create_all(db_engine)
+```
+**Figure 15**: The create engine in seperate python file to create database when it is being activated in the main file.
 
 
 
-2.2 Query 
-Query databases by using session.query act as select which can select specific value by using filter command. Query can be used in many cases. For example, creating datatable (explain in 2.3) query to check if the information is correct or not in verifying password, query to get the string in content column of diary table to calculate average word count, query to get row remove a row using query().delete() in delete function or use to query each value of the selected row to update in edit function. 
+```py
+	db_engine = create_engine("sqlite:///application_database.db")
+Base.metadata.bind = db_engine
+db_session = sessionmaker(bind = db_engine)
+session = db_session()
+```
+**Figure 16**: In the main file link this file with the database file using create engine and bind, then to create session to activate different functions and methods from library by bind it to the database engine and use sessionmaker.
+	
+After finishing working with seperate file, in the main file, create_engine function will be used to bind the file with the created database as shown in **figure 16**.
 
-2.3 Creating Table
+#### 2.1 Registration(adding information into database)
+	
+```py
+def register(self):
+  password = self.ids.rpassword.text
+  confirm = self.ids.confirm.text
+  email =  self.ids.remail.text
+  username = self.ids.user.text
+  # create variable to assign each id on screen to it
+  check_user = session.query(user).filter(user.email == email,user.username == username).all()
+  #query with email and username to check that they are unique 
+  if password != "" and confirm != "":
+      #Check that the confirmed password inputted is the same as the password
+      if password == confirm and not check_user:
+          #Create id using random number generator
+          iden = random.randint(1, 100000)
+          check_id = session.query(user).filter(user.id == iden).all()
+          while iden == check_id:
+              iden = random.randint(1, 100000)
+          #query the database to check that id is unique and if not generate another random id 
 
-	To show the diary that the user wrote, the MDDatatable will be used. This table can be created with the use of KivyMD to create the show datatable and ORM to insert data from database to datatable. Firstly, query the database with the email of the user to only get the diary that belongs to the specific user. After that the list will be created for each column of every row to be added before defining the variable  for the table that will be created and assigning different elements to it (figure). After that function row_press and on_check_press to detect when the checkbox is pressed will be bound to the table.The table can then be added to the screen using self.add_widget(self.data_tables).
+          password = encrypt_password(password)
+          #using encrypt function to make hash of password
+          new = user(id=iden,
+                      email=email,
+                      username=username,
+                      password=password
+                  )
+          session.add(new)
+          session.commit()
+          #input the information into the database and change screen to the welcome screen
+          self.parent.current = "WelcomeScreen"
+
+      elif password == confirm and check_user:
+          #When user is already in database
+          self.ids.msg.text = "User existed"
+      else:
+          #when password doesn't match with confirm password 
+          self.ids.msg.text = "password doesn't match"
+  else:
+      #when password textfield is blank change the text and color of the text
+      self.ids.msg.text = "password needed"
+      self.ids.msg.text_color = 1, 0, 0,1
+```
+**Figure 17** The function above is used to check that inputted information is correct and unique for registration. After that, those information will be inputted in the database with encrypted password. Each user will have unique randomly generated id.
+
+Example of adding information into the database is in the registration process (**figure 17**) which uses session.query with filter to query the database whether the inputted email and username have been used or not to prevent existing users from registering again. Then, the password has to be verified to check whether the confirmed password matches with the inputted password or not using the id from the kivy to get the value. After that, a random unique id will be generated for each user using the random.randint(a,b) from the imported random(**figure 7**) which it will generate random number from a to  b-1. To make sure that the id is unique, the database will be repeatedly query if the id is already existed in the database and if it already existed the new random number will be genrated. After that, the information can be added in the database using session.add(new) which is the variable that is used to define the information that will be added in each column as shown in **figure 17** Then, it will add all the information into the user table after being committed using session.commit() function. The same process also applies to adding the information to the diary table which uses datetime.today() (shown in **figure 18**) to get the date for the date_added and last_update column.
+
+```py
+      def save(self):
+        #function to save the new diary with 7 columns listed below
+        #assign email from login screen to this email variable.
+        email = self.parent.ids.loginscr.ids.email.text
+        title = self.ids.title.text
+        author = self.ids.author.text
+        content = self.ids.content.text
+        if author == "":
+            #auto fill the author field if it's left blank with the username
+            username = session.query(user.username).filter(user.email == self.parent.ids.loginscr.ids.email.text)
+            for row in username:
+                username = row[0]
+            author = str(username)
+        id = random.randint(1, 100000)
+        day = datetime.today().strftime('%Y-%m-%d')
+        #get the date and time for today and make it in YYYY-MM-DD form
+        diary_id = session.query(diary).filter(diary.id == id).all()
+        while id == diary_id:
+          id = random.randint(1, 100000)
+        #add them in database
+        new_diary = diary(id = id,
+                   email=email,
+                   title=title,
+                   date_added = day,
+                   last_update = day,
+                   author=author,
+                   content=content
+                   )
+        session.add(new_diary)
+        session.commit()
+        self.parent.current = "WelcomeScreen"
+        #change screen to welcome screen
+```
+**Figure 18**: The function to save the new diary written which works the same way as saving the new user in registration except in this function, the datetime.today() has been used to get the date when the user create the new diary and input in database. 
+
+#### 2.2 Query/Select 
+Query databases by using session.query act as select which can select specific value by using filter command. Query can be used in many cases. For example, creating datatable (explain in 2.3), query to check if the information is correct or not in logging in process(**figure  10**), query to get the string in content column of diary table to calculate average word count(2.4), query to get row remove a row using query().delete() in delete function (**figure 19**) or use to session.execute(select) which is the alternative to the query to get each value of the selected row to update in edit function(**figure 20**). 
+  
+```py
+   def delete(self):
+        #function to remove row in the datatable and also update the table
+        id = self.parent.ids.OpenScreen.ids.label.text
+        #use the id of the selected row
+        dele = session.query(diary).filter(diary.id == id).delete()
+        #delete using query with id and commit change
+        session.commit()
+        query = session.query(diary).filter(diary.email == self.parent.ids.loginscr.ids.email.text).all()
+        print(query)
+        #query with the user's email
+        #define variable to update table and average
+        number_of_row = 0
+        total = 0
+        result = []
+        for q in query:
+
+            list = q.content.split()
+            total += len(list)
+            number_of_row += 1
+            #get total word counts and total diary
+            result.append([q.id, q.title, q.date_added, q.last_update, q.author, q.content])
+            # get each data in each column to update the table
+        print(result)
+```
+**Figure 19**: Function to delete the checked row in the database using query by id to get the row and update table and average number shown.
+  
+  
+```py
+       def edit(self):
+        # define each value with variable and query with id, then replace the data in the specific colum
+        id = self.ids.label.text
+        title = self.ids.title.text
+        date = datetime.today().strftime('%Y-%m-%d')
+        #update datetime
+        author = self.ids.author.text
+        content = self.ids.content.text
+        #select work similar to query which will select a row and scalar_one
+        upd = session.execute(select(diary).filter_by (id = id)).scalar()
+        print(upd)
+        upd.title = title
+        upd.last_update = date
+        upd.author = author
+        upd.content = content
+        session.commit()
+        self.parent.current = "TableScreen"
+```
+  **Figure 20**: Function to save the change that the user made by replacing the old information with the new inputted information by defining each variable with each column data in the row using session.execute(select().filter_by()).scalar() and replace it with the inputted information from the textfield using id.
+  
+  
+#### 2.3 Creating Table
+```py
+    def on_pre_enter(self, *args):
+        """Get the data from the database"""
+        query = session.query(diary).filter(diary.email == self.parent.ids.loginscr.ids.email.text).all()
+        #query diary table using email to get diary that belong to specific user.
+        print(query)
+        result = []
+        #create list to store detail of each column that would be presented in the table
+        for q in query:
+            result.append([q.id,q.title,q.date_added,q.last_update,q.author,q.content])
+            #append all those information to the list
+        #create table using MDDataTable
+        self.data_tables = MDDataTable(
+            size_hint =(1,0.6), #size of table
+            pos_hint = {"center_x":0.5, "center_y":0.5}, #position of table
+            check = True, #create check box
+            column_data = [("ID",50),("Title",100),("Date added",40),("Last update",40),("Author", 40), ("Content", 100)], 
+            #column name and size
+            row_data = result, #input the data from the list result
+        )
+        self.data_tables.bind(on_row_press = self.on_row_press)
+        #bind with function row_press to detect when the row has been pressed
+        self.data_tables.bind(on_check_press=self.on_check_press)
+        #bind with function on_check_press to detect the checkbox has been checked
+        self.add_widget(self.data_tables)
+        #add the table to screen
+```
+**Figure 21**: Function "on_pre_enter" will be used to create the datatable before the screen is opened. It will take the data from database to insert into the data table and can be adjusted using MDDataTable function to set the size, position, column data, row data, etc.
+  
+To show the diary that the user wrote, the MDDatatable will be used with function on_pre_enter to show the table before the screen is opened as shown in **figure 21** .  This table can be created with the use of KivyMD to create the show datatable and ORM to insert data from database to datatable. Firstly, query the database with the email of the user to only get the diary that belongs to the specific user. After that the list will be created for each column of every row to be added before defining the variable  for the table that will be created and assigning different elements to it (figure). After that function row_press and on_check_press to detect when the checkbox is pressed will be bound to the table.The table can then be added to the screen using self.add_widget(self.data_tables).
+
+#### 2.4 Calculating Average Word Count
+  
+```py
+#create variable for number of row(total diary) and total words
+        number_of_row = 0
+        total = 0
+        for q in query:
+            list = q.content.split()
+            #split the content in each diary and check the length by using len then add it to the total word count
+            total += len(list)
+            number_of_row += 1
+            #add number of diary by 1 until the last diary
+        if number_of_row > 0:
+            #if there is a diary the total word counts will be divide to give approximate average word count per diary in integer.
+            self.ids.avg.text = f"Average word count of your diary is {total // number_of_row} words."
+        else:
+            #if there is 0 diary then average will be 0
+            self.ids.avg.text = f"Average word count of your diary is 0 words."
+```
+**Figure 22**: Calculating average by calculating the total word count using split and len after query the content(the query part has been done in **figure 21**) after that it will use loop to count the number of row or number of diary which then will be used to calculate the approximate word count per diary.
+  
+As seen from **figure 22** this is another part that used query(use the same query as the query for table as this is part of function on_pre_enter as well) to get the content in every diary of that user from the table and split it using q.content.split() to split each word and to count each word in diary using len(list). After counting number of words in each diary it will be added to the variable total which is the total words in all diary which will then be divide(without remainder) by the number of row calculate using +=1 in the loop which will increase 1 diary every time the code is repeated. If there is at least 1 diary, the average will be displayed but if there isn't a diary that belong to that user the else will be activated to show the 0 word.
+  
+
+### 3.Password
+
+ ```py  
+from passlib.context import CryptContext
+#import cryptcontext to use sha256 to create hash of user's password
+
+pwd_context = CryptContext(
+    schemes = ["pbkdf2_sha256"],
+    default ="pbkdf2_sha256",
+    pbkdf2_sha256__default_rounds = 30000
+)
+#use cryptcontext to make hash of password 30,000 times
+def encrypt_password(password):
+    #encrypt the inputted password
+    return pwd_context.encrypt(password)
 
 
+def check_password(password,hashed):
+    #compare the inputted password with the inputted hash
+    return pwd_context.verify(password,hashed)
+```
+ **Figure 23**: Setting up the cryptographic hash function to encrypt the password using function encrypt password and use check_password to verify password.
+  
+To secure the password in the database, it will be encrypted using Password Based Key Derivation Function(Pbkdf2) which will create a hash (unique code) using cryptographic function called sha256. In order to do this, CryptContext function which is imported from passlib.context will be used to hash the password 30,000 times with the scheme sha256 in **figure 23**. 
 
+  ```py
+  password = encrypt_password(password)
+  ```
+  **Figure 24**: This is part of the registration function(**figure 17**) which shows the use of function encrypt_password()
+  
+Firstly, the variable will be defined to activate the function of hashing the password. After that, 2 functions can be created  encrypt_password(to encrypt inputted password) and check_password(to verify inputted password with the one in database) shown in **figure 23**. Then, use this with the register function in RegisterScreen to encrypt the password that user inputted **figure 24**. After the hashed password is saved into the database, the check_password function defined earlier will be used in the login process to verify the inputted password **figure 25**. 
 
+```py
+  pwd = session.query(user.password).filter(user.email == email)
+            for row in pwd:
+                pwd = row[0]
+            checkpass = check_password(password, pwd)  
+```
+**Figure 25**: This is part of login function which use the checkpass wto compared the password which is the variable assigned to the user's inputted password in the login screen and the hash in the database which was recieved by using query.
+  
+### 4. Update
+To develop software after the release to satisfy the user based on their feedback. The application will be automatically updated quarterly which mostly will be the corrective update which user doesn't have to install the update. However, the application will also provided new features at least once a year which this type of update will be functional updaate which the user will have to download the update from the developer's website. Moreover, if there is a bug that can cause the lost in user's information an immediate correction update will be provided for user to download to fix those bugs.
 
-
- Password
-	To secure the password in the database, it will be encrypted using Password Based Key Derivation Function(Pbkdf2) which will create a hash (unique code) using cryptographic function called sha256. In order to do this, CryptContext function which is imported from passlib.context will be used to hash the password 30,000 times with the scheme sha256 **figure below**. 
-
-Firstly, the variable will be defined to activate the function of hashing the password. After that, 2 functions can be created  encrypt_password(to encrypt inputted password) and check_password(to verify inputted password with the one in database) shown in **figure below**. Then, use this with the register function in RegisterScreen to encrypt the password that user inputted **figure below**. After the hashed password is saved into the database, the check_password function defined earlier will be used in the login process to verify the inputted password **figure below**. 
-
-### Update
-  To develop software after the release to satisfy the user based on their feedback. The application will be automatically updated quarterly which mostly will be the corrective update which user doesn't have to install the update. However, the application will also provided new features at least once a year which this type of update will be functional updaate which the user will have to download the update from the developer's website. Moreover, if there is a bug that can cause the lost in user's information an immediate correction update will be provided for user to download to fix those bugs.
 # Criteria D : Functionality and Extensibility of Product
 
-VDO
+https://user-images.githubusercontent.com/82266864/163827807-0711c3d8-d3a2-4885-89ea-17fc340618d2.mp4
+
+  **Figure 26**: Video to show application functionality and extensibility
   
-  # Citation
+# Citation
   https://www.ibm.com/docs/en/zos/2.4.0?topic=task-types-software-updates
+  https://docs.python.org/3/library/random.html
+  https://passlib.readthedocs.io/en/stable/narr/context-tutorial.html 
   
 # Appendix
   ## Whole Code
 # Python file
   ```py
-  import random
+ import random
 #import random to use random.randing
 from datetime import datetime
 #import datetime to get today date
@@ -359,20 +641,22 @@ pwd_context = CryptContext(
     default ="pbkdf2_sha256",
     pbkdf2_sha256__default_rounds = 30000
 )
+#use cryptcontext to make hash of password 30,000 times
 def encrypt_password(password):
+    #encrypt the inputted password
     return pwd_context.encrypt(password)
 
+
 def check_password(password,hashed):
+    #compare the inputted password with the inputted hash
     return pwd_context.verify(password,hashed)
+
+
 db_engine = create_engine("sqlite:///application_database.db")
 Base.metadata.bind = db_engine
 db_session = sessionmaker(bind = db_engine)
 session = db_session()
-def encrypt_password(password):
-    return pwd_context.encrypt(password)
 
-def check_password(password,hashed):
-    return pwd_context.verify(password,hashed)
 
 class LoginScreen(MDScreen):
     #class that links to the login screen to create function that will be activated when some actions
@@ -412,6 +696,7 @@ class LoginScreen(MDScreen):
 
 class RegisterScreen(MDScreen):
     def on_pre_enter(self, *args):
+        #make all the textfield blank when enter the screen
         self.ids.remail.text = ""
         self.ids.confirm.text = ""
         self.ids.user.text = ""
@@ -421,14 +706,22 @@ class RegisterScreen(MDScreen):
         confirm = self.ids.confirm.text
         email =  self.ids.remail.text
         username = self.ids.user.text
-        check_user = session.query(user).filter(user.email == email,user.username == username).all()
+        # create variable to assign each id on screen to it
+        check_user = session.query(user).filter(user.email == email).all()
+        #query with email and username to check that they are unique
         if password != "" and confirm != "":
+            #Check that the confirmed password inputted is the same as the password
             if password == confirm and not check_user:
+                #Create id using random number generator
                 iden = random.randint(1, 100000)
                 check_id = session.query(user).filter(user.id == iden).all()
                 while iden == check_id:
                     iden = random.randint(1, 100000)
+
+                #query the database to check that id is unique and if not generate another random id
+
                 password = encrypt_password(password)
+                #using encrypt function to make hash of password
                 new = user(id=iden,
                             email=email,
                             username=username,
@@ -436,13 +729,18 @@ class RegisterScreen(MDScreen):
                         )
                 session.add(new)
                 session.commit()
+                self.parent.ids.loginscr.ids.email.text = self.ids.remail.text
+                #input the information into the database and change screen to the welcome screen
                 self.parent.current = "WelcomeScreen"
 
             elif password == confirm and check_user:
+                #When user is already in database
                 self.ids.msg.text = "User existed"
             else:
+                #when password doesn't match with confirm password
                 self.ids.msg.text = "password doesn't match"
         else:
+            #when password textfield is blank change the text and color of the text
             self.ids.msg.text = "password needed"
             self.ids.msg.text_color = 1, 0, 0,1
 
@@ -466,26 +764,33 @@ class WelcomeScreen(MDScreen):
         self.parent.ids.loginscr.ids.label.font_name= "Conquest.ttf"
 
 
+
 class NewItemScreen(MDScreen):
     def on_pre_enter(self, *args):
+        #Make all the textfield blank before enter the screen
         self.ids.title.text = ""
         self.ids.author.text = ""
         self.ids.content.text = ""
     def save(self):
+        #function to save the new diary with 7 columns listed below
+        #assign email from login screen to this email variable.
         email = self.parent.ids.loginscr.ids.email.text
         title = self.ids.title.text
         author = self.ids.author.text
         content = self.ids.content.text
         if author == "":
+            #auto fill the author field if it's left blank with the username
             username = session.query(user.username).filter(user.email == self.parent.ids.loginscr.ids.email.text)
             for row in username:
                 username = row[0]
             author = str(username)
         id = random.randint(1, 100000)
         day = datetime.today().strftime('%Y-%m-%d')
+        #get the date and time for today and make it in YYYY-MM-DD form
         diary_id = session.query(diary).filter(diary.id == id).all()
         while id == diary_id:
           id = random.randint(1, 100000)
+        #add them in database
         new_diary = diary(id = id,
                    email=email,
                    title=title,
@@ -497,6 +802,7 @@ class NewItemScreen(MDScreen):
         session.add(new_diary)
         session.commit()
         self.parent.current = "WelcomeScreen"
+        #change screen to welcome screen
 
 
 class TableScreen(MDScreen):
@@ -506,33 +812,45 @@ class TableScreen(MDScreen):
     def on_pre_enter(self, *args):
         """Get the data from the database"""
         query = session.query(diary).filter(diary.email == self.parent.ids.loginscr.ids.email.text).all()
+        #query diary table using email to get diary that belong to specific user.
         print(query)
         result = []
+        #create list to store detail of each column that would be presented in the table
         for q in query:
             result.append([q.id,q.title,q.date_added,q.last_update,q.author,q.content])
-        print(result)
+            #append all those information to the list
+        #create table using MDDataTable
         self.data_tables = MDDataTable(
-            size_hint =(1,0.6),
-            pos_hint = {"center_x":0.5, "center_y":0.5},
-            check = True,
+            size_hint =(1,0.6), #size of table
+            pos_hint = {"center_x":0.5, "center_y":0.5}, #position of table
+            check = True, #create check box
             column_data = [("ID",50),("Title",100),("Date added",40),("Last update",40),("Author", 40), ("Content", 100)],
-            use_pagination=True,
-            row_data = result,
+            #column name and size
+            row_data = result, #input the data from the list result
         )
         self.data_tables.bind(on_row_press = self.on_row_press)
+        #bind with function row_press to detect when the row has been pressed
         self.data_tables.bind(on_check_press=self.on_check_press)
+        #bind with function on_check_press to detect the checkbox has been checked
         self.add_widget(self.data_tables)
 
+        #add the table to screen
+
+        #create variable for number of row(total diary) and total words
         number_of_row = 0
         total = 0
         for q in query:
             list = q.content.split()
+            #split the content in each diary and check the length by using len then add it to the total word count
             total += len(list)
             number_of_row += 1
+            #add number of diary by 1 until the last diary
         if number_of_row > 0:
-            self.ids.avg.text = f"Average word count of your diary is {total // number_of_row} words"
+            #if there is a diary the total word counts will be divide to give approximate average word count per diary in integer.
+            self.ids.avg.text = f"Average word count of your diary is {total // number_of_row} words."
         else:
-            self.ids.avg.text = f"Average word count of your diary is 0 words"
+            #if there is 0 diary then average will be 0
+            self.ids.avg.text = f"Average word count of your diary is 0 words."
 
 
 
@@ -543,7 +861,7 @@ class TableScreen(MDScreen):
 
     def on_check_press(self,table,current_row):
         id,title,date_added,last_update,author,content = current_row
-        print(title,date_added,last_update,author,content)
+        print(id)
         self.parent.ids.OpenScreen.ids.label.text = id
         self.parent.ids.OpenScreen.ids.title.text = title
         self.parent.ids.OpenScreen.ids.author.text = author
@@ -556,26 +874,36 @@ class TableScreen(MDScreen):
         else:
             pass
     def delete(self):
+        #function to remove row in the datatbale and also update the table
         id = self.parent.ids.OpenScreen.ids.label.text
-        print(int(id))
+        #use the id of the selected row
         dele = session.query(diary).filter(diary.id == id).delete()
+        #delete using query with id and commit change
         session.commit()
-        print(dele)
         query = session.query(diary).filter(diary.email == self.parent.ids.loginscr.ids.email.text).all()
         print(query)
+        #query with the user's email
+        #define variable to update table and average
         number_of_row = 0
         total = 0
         result = []
         for q in query:
+
             list = q.content.split()
             total += len(list)
             number_of_row += 1
+            #get total word counts and total diary
             result.append([q.id, q.title, q.date_added, q.last_update, q.author, q.content])
+            # get each data in each column to update the table
         print(result)
+
         if number_of_row>0:
+            #if there is a diary then the total word count can be divided by the number of diary to show avarage word count per diary
             self.ids.avg.text = f"Average word count of your diary is {total // number_of_row} words"
         else:
+            #if there is no diary then the average word count will be zero
             self.ids.avg.text =  f"Average word count of your diary is 0 words"
+        #update the table with new data in from the list "result" created before
         self.data_tables.update_row_data(
             None, result
         )
@@ -586,26 +914,22 @@ class OpenScreen(MDScreen):
 
 
     def edit(self):
-        id = self.parent.ids.OpenScreen.ids.label.text
+        # define each value with variable and query with id, then replace the data in the specific colum
+        id = self.ids.label.text
         title = self.ids.title.text
         date = datetime.today().strftime('%Y-%m-%d')
+        #update datetime
         author = self.ids.author.text
         content = self.ids.content.text
-        upd = session.query(diary).filter(id == id).first()
+        #select work similar to query which will select a row and scalar_one
+        upd = session.execute(select(diary).filter_by (id = id)).scalar()
+        print(upd)
         upd.title = title
         upd.last_update = date
         upd.author = author
         upd.content = content
-        print(upd)
+        session.commit()
         self.parent.current = "TableScreen"
-
-
-
-
-
-
-
-
 
 
 
