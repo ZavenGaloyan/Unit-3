@@ -1,4 +1,19 @@
-# Criteria A : Planning
+# Table of Content
+1. [Criteria A](#criteria-a-planning)
+
+2. [Criteria B](#criteria-b-solution-overview)
+
+3. [Criteria C](#criteria-c-development)
+
+4. [Criteria D](#criteria-d-functionality-and-extensibility-of-product
+
+5. [Citation](#citation)
+
+6. [Appendix](#appendix)
+
+
+
+# Criteria A-Planning
 
 ### Problem Definition (Client identification)
 My client is a grade 11 student, Anju Yasu who is studying the IB diploma program at UWC ISAK Japan. One of her IB subjects is English B and the class is having a semester-long individual project called “Happiness Project”. In this project, every student has to complete a few tasks, and one of the tasks is called a Happiness journal –student has to write down what makes them happy in the form of a journal or diary. As an English B student, Anju wanted to record her journal on her laptop, so she wanted an application that she can type in her experience of that day, the date, diary/journal name, and who wrote it. In addition, since the diary may contain the personal information of the author, the client wants this application to have a register and login function to prevent other people to access her diary. 
@@ -27,7 +42,7 @@ In this project, the application will have login system as the client may  have 
 
 As for tool, I will use kivymd to create the application interface, SQLAlchemy to create and manage the database, and python 3.9 to create the function of the application. Firstly, I use kivymd to create the interface as kivymd is a simple framework that can allow the user to create the application interface like the login screen, home screen, and every interface needed in this project. Kivymd also provided their user with a detailed description, easy-to-follow example, and “how to use” for each command. In addition, Kivymd can also work with Python to create applications with good functionality. Secondly, SQLAlchemy is the main library that will be used in this project to create and organize the database that will collect the data inputted by users in the form of an online library. SQLAlchemy is being used in this project because it allows the client to easily see and understand all the information inputted in the table and allows them to sort the data as well. Moreover, SQLAlchemy allows me to use it along with normal python and kivymd and all of them can perfectly work together to create an application that can meet all the success criteria. Lastly, the main programming language that will be used in this project is Python because Python is a simple coding language that allows me to meet all the client’s requirements and it also allows me to create applications interface and manage the database by cooperating with Kivymd and SQLAlchemy mentioned before.
 
-# Criteria B : Solution overview
+# Criteria B-Solution overview
 
 ## Flowchart
 
@@ -80,10 +95,44 @@ As for tool, I will use kivymd to create the application interface, SQLAlchemy t
 
 **Table 1** Test plan for tester to follow to test the application.
 ## Record of Task 
-Paste when complete
 
+|    | Planned Action                                        | Planned Outcome                                                                            | Time Estimate | Target Completion | Criteria |
+|----|-------------------------------------------------------|--------------------------------------------------------------------------------------------|---------------|-------------------|----------|
+| 1  | First meeting with client                             | To understand client problem and requirements                                              | 30 minutes    | 5 March           | A        |
+| 2  | Write down success criteria                           | To list down the first success criteria                                                    | 20 minutes    | 6 March           | A        |
+| 3  | Write problem definition                              | Have problem definition which will identify who client is and the product that client want | 1 hour        | 6 March           | A        |
+| 4  | Update success criteria                               | List more success criteria and prepare for presentation to client                          | 30 minutes    | 14 March          | A        |
+| 5  | Meet with client to  present the success criteria     | Present success criteria to client to get the approval                                     | 30 minutes    | 19 March          | A        |
+| 6  | Research and write rationale for proposed solution    | Finish rationale for proposed solution                                                     | 2 hours       | 20 March          | A        |
+| 7  | Starts working on login and registration system       | Finish login and registration system with database                                         | 1 day         | 23 March          | C        |
+| 8  | Create wireframe diagram                              | Wireframe diagram is ready to present to client as the first MVP                           | 1 hour        | 24 March          | B        |
+| 9  | Create system diagram                                 | System diagram is done with details written on it                                          | 2 hours       | 25 March          | B        |
+| 10 | Working on password encryption                        | Using sha256 to encrypt password and check password in login and registration              | 1 hour        | 2 April           | C        |
+| 11 | Create welcome screen following the wireframe diagram | Have welcome screen ready                                                                  | 2 hours       | 8 April           | C        |
+| 12 | Present the wireframe and application to the client   | Get client's feedback on the wireframe and application                                     | 30 minutes    | 9 April           | A        |
+| 13 | Make ER diagram                                       | ER diagram is created for both tables                                                      | 40 minutes    | 9 April           | B        |
+| 14 | Update record of task                                 | Record of task is up to date                                                               | 20 minutes    | 10 April          | B        |
+| 15 | Create table to show diary                            | Table is created and can show every diary belongs to that specific user                    | 3 hours       | 14 April          | C        |
+| 16 | Make new diary screen                                 | Allow user to create new diary in the application and can check their diary in the table   | 3 hours       | 15 April          | C        |
+| 17 | Create remove button and edit button                  | Allow user to remove and edit their diary                                                  | 5 hours       | 16 April          | C        |
+| 18 | Update edit button                                    | Make new screen for editing                                                                | 1 hour        | 16 April          | C        |
+| 19 | Work on average word count calculation                | Create a code to show average word count per diary                                         | 2 hours       | 16 April          | C        |
+| 20 | Create flow diagram                                   | Make flow diagram for average word count code                                              | 1 hour        | 17 April          | B        |
+| 21 | Update new Wireframe diagram                          | The new wireframe diagram match the UI of the application                                  | 30 minutes    | 17 April          | B        |
+| 22 | Write about update                                    | Write about software update system of the application in the development part              | 30 minutes    | 18 April          | C        |
+| 23 | Work on development writing                           | Finish development with code and explanation written                                       | 6 hours       | 19 April          | C        |
+| 24 | Create UML diagram                                    | UML diagram for TableScreen class is ready                                                 | 30 minutes    | 19 April          | C        |
+| 25 | Make test plan                                        | Test plan is ready and easy for tester to follow the steps                                 | 2 hours       | 19 April          | B        |
+| 26 | Show final product to the client                      | Get feedback or approval for client for the final product and let client test it           | 15 minutes    | 20 April          | A        |
+| 27 | Record video                                          | Make video to show functionality and extensibility of the application                      | 10 minutes    | 21 April          | D        |
+| 28 | Complete citation and appendix                        | Make citation and appendix                                                                 | 1 hour        | 21 April          | -        |
+| 29 | Complete record of task                               | Complete and put record of task on github                                                  | 5 minutes     | 22 April          | B        |
 
-# Criteria C : Development
+**Table 2**: Record of Task- showing the planning and working process throughout the project 
+
+# [Back To Top](#table-of-content)
+
+# Criteria C-Development
 
 ## List of techniques used
 - OOP paradigm
@@ -603,7 +652,9 @@ Firstly, the variable will be defined to activate the function of hashing the pa
 ### 4. Update
 To develop software after the release to satisfy the user based on their feedback. The application will be automatically updated quarterly which mostly will be the corrective update which user doesn't have to install the update. However, the application will also provided new features at least once a year which this type of update will be functional updaate which the user will have to download the update from the developer's website. Moreover, if there is a bug that can cause the lost in user's information an immediate correction update will be provided for user to download to fix those bugs.
 
-# Criteria D : Functionality and Extensibility of Product
+# [Back To Top](#table-of-content)
+	
+# Criteria D-Functionality and Extensibility of Product
 
 https://user-images.githubusercontent.com/82266864/163828425-d20c6417-40ce-400f-af07-7200f3d366ba.mp4
 
@@ -616,7 +667,7 @@ https://user-images.githubusercontent.com/82266864/163828425-d20c6417-40ce-400f-
   
 # Appendix
   ## Whole Code
-# Python file
+### Python file
   ```py
  import random
 #import random to use random.randing
