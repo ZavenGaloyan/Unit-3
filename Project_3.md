@@ -5,7 +5,7 @@
 
 3. [Criteria C](#criteria-c-development)
 
-4. [Criteria D](#criteria-d-functionality-and-extensibility-of-product
+4. [Criteria D](#criteria-d-functionality-and-extensibility-of-product)
 
 5. [Citation](#citation)
 
