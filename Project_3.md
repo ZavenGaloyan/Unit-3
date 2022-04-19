@@ -661,9 +661,30 @@ https://user-images.githubusercontent.com/82266864/163828425-d20c6417-40ce-400f-
   **Figure 26**: Video to show application functionality and extensibility
   
 # Citation
-  https://www.ibm.com/docs/en/zos/2.4.0?topic=task-types-software-updates
-  https://docs.python.org/3/library/random.html
-  https://passlib.readthedocs.io/en/stable/narr/context-tutorial.html 
+
+“CryptContext Tutorial — Passlib V1.7.4 Documentation.” Passlib.readthedocs.io, passlib.readthedocs.io/en/stable/narr/context-tutorial.html. Accessed 1 Apr. 2022.
+	
+“DataTables — KivyMD 1.0.0.Dev0 Documentation.” Kivymd.readthedocs.io, kivymd.readthedocs.io/en/latest/components/datatables/index.html. Accessed 12 Apr. 2022.
+	
+“How to Get Current Date and Time in Python?” Programiz.com, 2019, www.programiz.com/python-programming/datetime/current-datetime. Accessed 13 Apr. 2022.
+	
+“Insert, Updates, Deletes — SQLAlchemy 1.4 Documentation.” Docs.sqlalchemy.org, docs.sqlalchemy.org/en/14/core/dml.html. Accessed 14 Apr. 2022.
+	
+“Query API — SQLAlchemy 1.4 Documentation.” Docs.sqlalchemy.org, docs.sqlalchemy.org/en/14/orm/query.html. Accessed 22 Mar. 2022.
+	
+“Random — Generate Pseudo-Random Numbers — Python 3.8.2 Documentation.” Docs.python.org, docs.python.org/3/library/random.html. Accessed 1 Apr. 2022.
+	
+Sanyal, Sayantani. “10 Reasons Why Python Is One of the Best Programming Languages.” Analyticsinsight, 18 Feb. 2022, www.analyticsinsight.net/10-reasons-why-python-is-one-of-the-best-programming-languages/#:~:text=Python%20language%20can%20help%20automate. Accessed 20 Mar. 2022.
+	
+“Text Field — KivyMD Documentation.” Kivymd.readthedocs.io, kivymd.readthedocs.io/en/0.104.1/components/text-field/index.html. Accessed 20 Mar. 2022.
+	
+“Types of Software Updates.” Www.ibm.com, 8 Apr. 2021, www.ibm.com/docs/en/zos/2.4.0?topic=task-types-software-updates. Accessed 18 Apr. 2022.
+	
+Uwase, Ange. “Here Is the Reason Why SQLAlchemy Is so Popular.” Medium, 8 Feb. 2021, towardsdatascience.com/here-is-the-reason-why-sqlalchemy-is-so-popular-43b489d3fb00#:~:text=SQLAlchemy%20is%20the%20ORM%20of. Accessed 20 Mar. 2022.
+	
+Veness, Chris. “SHA-256 Cryptographic Hash Algorithm Implemented in JavaScript | Movable Type Scripts.” Movable-Type.co.uk, 2019, www.movable-type.co.uk/scripts/sha256.html. Accessed 2 Apr. 2022.
+
+
   
 # Appendix
   ## Whole Code
