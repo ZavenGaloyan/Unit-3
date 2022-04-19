@@ -130,7 +130,7 @@ As for tool, I will use kivymd to create the application interface, SQLAlchemy t
 
 **Table 2**: Record of Task- showing the planning and working process throughout the project 
 
-# [Back To Top](#table-of-content)
+### [Back To Top](#table-of-content)
 
 # Criteria C-Development
 
@@ -652,7 +652,7 @@ Firstly, the variable will be defined to activate the function of hashing the pa
 ### 4. Update
 To develop software after the release to satisfy the user based on their feedback. The application will be automatically updated quarterly which mostly will be the corrective update which user doesn't have to install the update. However, the application will also provided new features at least once a year which this type of update will be functional updaate which the user will have to download the update from the developer's website. Moreover, if there is a bug that can cause the lost in user's information an immediate correction update will be provided for user to download to fix those bugs.
 
-# [Back To Top](#table-of-content)
+### [Back To Top](#table-of-content)
 	
 # Criteria D-Functionality and Extensibility of Product
 
