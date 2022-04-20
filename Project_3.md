@@ -11,6 +11,8 @@
 
 6. [Appendix](#appendix)
 
+6.1  [Meeting Note](#client-meeting-note)
+
 
 
 # Criteria A-Planning
@@ -694,7 +696,33 @@ https://user-images.githubusercontent.com/82266864/163828425-d20c6417-40ce-400f-
 
   
 # Appendix
-  ## Whole Code
+	
+# Client Meeting note
+	
+### Meeting 1
+Purpose: Ask for the problem and requirements
+	
+Response: Create application to take note or for diary
+	
+### Meeting 2
+
+Purpose: Success criteria approval
+	
+Response: [Recording](###client-meeting-record-(success-criteria))
+	
+### Meeting 3
+
+Purpose: Show first version of wireframe and login/registration/welcome screen
+
+Respone: To update the wireframe diagram - create seperate screen for edit and show the full app next meeting
+
+### Meeting 4
+
+Purpose: Show the finish product
+
+Response: -
+
+## Whole Code
 ### Python file
   ```py
  import random
