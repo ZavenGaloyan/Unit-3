@@ -36,6 +36,13 @@ My client is a grade 11 student, Anju Yasu who is studying the IB diploma progra
 
 8. The application can show the average word count of the total content of every the diary at the below the diary table in the list screen.
 
+### Client meeting record (success criteria)
+
+
+
+https://user-images.githubusercontent.com/82266864/164173174-45c04aa5-f41b-47c6-92eb-332b3ebea65d.mp4
+
+
 
 ### Rationale for the Proposed Solution
 In this project, the application will have login system as the client may  have some sensitive information, so login in system is needed to secure the client. And it will be in application form as it is easy for client to use as well as being a user friendly application for client to use it without instruction needed. The application will also allow client to create different diary as everyone has different aspect in their life and this application will allow the user to record each of them in different diary for them to open the specific diary when they wanted to read or write about something related to that.
