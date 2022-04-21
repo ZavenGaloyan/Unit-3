@@ -49,7 +49,11 @@ https://user-images.githubusercontent.com/82266864/164173174-45c04aa5-f41b-47c6-
 ### Rationale for the Proposed Solution
 In this project, the application will have login system as the client may  have some sensitive information, so login in system is needed to secure the client. And it will be in application form as it is easy for client to use as well as being a user friendly application for client to use it without instruction needed. The application will also allow client to create different diary as everyone has different aspect in their life and this application will allow the user to record each of them in different diary for them to open the specific diary when they wanted to read or write about something related to that.
 
-As for tool, I will use kivymd to create the application interface, SQLAlchemy to create and manage the database, and python 3.9 to create the function of the application. Firstly, I use kivymd to create the interface as kivymd is a simple framework that can allow the user to create the application interface like the login screen, home screen, and every interface needed in this project. Kivymd also provided their user with a detailed description, easy-to-follow example, and “how to use” for each command. In addition, Kivymd can also work with Python to create applications with good functionality. Secondly, SQLAlchemy is the main library that will be used in this project to create and organize the database that will collect the data inputted by users in the form of an online library. SQLAlchemy is being used in this project because it allows the client to easily see and understand all the information inputted in the table and allows them to sort the data as well. Moreover, SQLAlchemy allows me to use it along with normal python and kivymd and all of them can perfectly work together to create an application that can meet all the success criteria. Lastly, the main programming language that will be used in this project is Python because Python is a simple coding language that allows me to meet all the client’s requirements and it also allows me to create applications interface and manage the database by cooperating with Kivymd and SQLAlchemy mentioned before.
+As for tool, I will use kivymd to create the application interface, SQLAlchemy to create and manage the database, and python 3.9 to create the function of the application. Firstly, I use kivymd to create the interface as kivymd is a simple framework that can allow the user to create the application interface like the login screen, home screen, and every interface needed in this project. Kivymd also provided their user with a detailed description, easy-to-follow example, and “how to use” for each command. In addition, Kivymd can also work with Python to create applications with good functionality. 
+
+Secondly, SQLAlchemy is the main library that will be used in this project to create and organize the database that will collect the data inputted by users in the form of an online library. SQLAlchemy is being used in this project because it allows the client to easily see and understand all the information inputted in the table and allows them to sort the data as well. Moreover, SQLAlchemy allows me to use it along with normal python and kivymd and all of them can perfectly work together to create an application that can meet all the success criteria.
+
+Lastly, the main programming language that will be used in this project is Python because Python is a simple coding language that allows me to meet all the client’s requirements and it also allows me to create applications interface and manage the database by cooperating with Kivymd and SQLAlchemy mentioned before.
 
 # Criteria B-Solution overview
 
@@ -57,36 +61,37 @@ As for tool, I will use kivymd to create the application interface, SQLAlchemy t
 
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/82266864/163771760-3bb20494-14a7-431f-8f51-aeab7e8f1fca.png)
 
-**Figure 1** This is the flow diagram that used to show the process of the average word count calculation part from defining the variable after start to returning message before the end.
+**Figure 1**: The diagram above is the flow diagram which shows different techniques used to produce find the average word count per diary, starting from query the database, using for loop to get values in the column from database and use if statement to make the final condition when there is no diary. This flowchart also uses different shapes to show different function of each method or techniques and arrow to show the flow from start to the end of that particular coding section
+
 
 
 ## System Diagram
 
 ![Untitled drawing (1)](https://user-images.githubusercontent.com/82266864/163768959-76e62696-9f45-4416-878b-1df96bee20e8.jpg)
 
-**Figure 2** This shows the system diagram from the input(keyboard) to the output which includes different systems being used in this project such as version of coding language and application, computer version and detail, module and database and the output screen.
+**Figure 2** This shows the system diagram from the input(keyboard) to the output which includes different systems being used in this project such as version of coding language(python and KivyMD) and application(PyCharm), computer version and detail(Processor,version, memory, etc.), module and database and the output screen(application interface on the computer screen).
 
 ## Wireframe Diagram
 
 ![IMG_637E054BF57E-1](https://user-images.githubusercontent.com/82266864/162605632-614d364a-6117-4b82-8307-4943742db26b.jpeg)
 
-**Figure 3** This shows the original wireframe diagram presented to the client as an MVP
+**Figure 3** This is the first version of the wireframe diagram or a prototype of the application's GUI. This is being used to show for the first MVP presentation with client. In this diagram, different screen that will be in the application will be put with different buttons. Arrows from one button to screen show which screen the button will open when it is pressed and released. In addition, the number on top of the screen also shows the  normal flow of the application from the Log in screen to the Registration screen and then Home screen, New diary screen and Open diary screen as shown above. 
 
 ![IMG_5DE50A8C9968-1](https://user-images.githubusercontent.com/82266864/163747867-8c6ead17-654e-4621-bcad-1c7d5481acba.jpeg)
 
-**Figure 4** This is the finishing product that shows the final version of wireframe diagram
+**Figure 4** This is the final version of the wireframe diagram which is used to show the final product or final GUI of the application. This is made using the feedback from the client after the MVP  meeting(note in appendix) which had been asked to add another screen for editting as editting in the open diary screen seems hard for user. 
 
 ## ER Diagram
 
 <img width="1089" alt="er" src="https://user-images.githubusercontent.com/82266864/163766363-f4d0ff35-4a26-46d3-8123-52b293fe4b1e.png">
 
-**Figure 5** This is the ER diagram showing the relation between 2 tables in this project.
+**Figure 5** This is the ER diagram showing the relationship between diary table and user table. In the diary table, there are 7 different columns including title, content, author, id ,email, last_update and date_added (shown above) which each column will have the specific data type after the column name. The second table has 4 columns which are username, ud, email and password. This diagram also shows that 1 user can have multiple diary.
 
 ## UML Diagram
 
 <img width="533" alt="UML" src="https://user-images.githubusercontent.com/82266864/163766329-9d88ca77-8700-4f4e-8353-ea1d7c202e9e.png">
 
-**Figure 6** This shows the UML diagram for the TableScreen class which is inherited from the MDScreen class.
+**Figure 6** This shows the UML diagram for the TableScreen class which inherited(shows by arrow) attributes and methods from the MDScreen class below. The new method in the TableScreen includes on_pre_enter(), on_row_press(). on_check_press(), open() and delete().
 
 
 
@@ -102,7 +107,7 @@ As for tool, I will use kivymd to create the application interface, SQLAlchemy t
 | Edit function               | Unit test        | 1. Press on one of the box in front of a diary in the TableScreen 2. Press open/edit button 3. Change some contents  4. Press save change           | The new content will be updated to the table which also change the last_update column and average word count                                                                                                                                                                                                                                                                                                                                        |
 | Python Code Review          | Code Review      | Check the main_ORM.py and database_model.py file for: 1. Variable names 2. Comment 3. Repetition                                                    | The variable name and comment help the user to understand the functionality of the code The code should be easy to follow and not too complicated to understand with no repetition.                                                                                                                                                                                                                                                                 |
 
-**Table 1** Test plan for tester to follow to test the application.
+**Table 1** Test plan for tester to follow to test the application. There are 3 different types of tests presented in the test plan which are unit test(to test one part of the program), integration test(to test the cooperation of different parts) and code review(to check the quality of code). In addition, description, input(step to follow) and expected output are also presented in the table for user to follow and knnow what to expect from each test.
 ## Record of Task 
 
 |    | Planned Action                                        | Planned Outcome                                                                            | Time Estimate | Target Completion | Criteria |
@@ -137,7 +142,7 @@ As for tool, I will use kivymd to create the application interface, SQLAlchemy t
 | 28 | Complete citation and appendix                        | Make citation and appendix                                                                 | 1 hour        | 21 April          | -        |
 | 29 | Complete record of task                               | Complete and put record of task on github                                                  | 5 minutes     | 22 April          | B        |
 
-**Table 2**: Record of Task- showing the planning and working process throughout the project 
+**Table 2**: Record of Task- showing the planning and working process throughout the project. This includes, programming, documentation, client's meetings and other process from the start of the project to the due date.  
 
 ### [Back To Top](#table-of-content)
 
