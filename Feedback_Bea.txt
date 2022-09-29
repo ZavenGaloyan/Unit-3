@@ -1,3 +1,0 @@
-There are some quizzes missing from the repositories from quiz 25 to quiz 30, quiz 31, and quiz 32. In your repositories, the quiz is well organized and easy 
-to find, in each quiz, the variable names are well set which allows the user to understand the meaning of each variable and what is inside it. However, there 
-is no comment for each part of the quiz which may confuse the user. Another thing that should be added, is the test result shows the output of each program.
